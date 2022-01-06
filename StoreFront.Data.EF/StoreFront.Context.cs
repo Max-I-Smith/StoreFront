@@ -13,10 +13,10 @@ namespace StoreFront.Data.EF
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class StoreFrontEntities : DbContext
+    public partial class db_a7a0a9_storefrontEntities : DbContext
     {
-        public StoreFrontEntities()
-            : base("name=StoreFrontEntities")
+        public db_a7a0a9_storefrontEntities()
+            : base("name=db_a7a0a9_storefrontEntities")
         {
         }
     
@@ -25,6 +25,10 @@ namespace StoreFront.Data.EF
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<AspNetRole> AspNetRoles { get; set; }
+        public virtual DbSet<AspNetUserClaim> AspNetUserClaims { get; set; }
+        public virtual DbSet<AspNetUserLogin> AspNetUserLogins { get; set; }
+        public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Department> Departments { get; set; }
         public virtual DbSet<Employee> Employees { get; set; }

@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EB4903E5-C3FB-445F-9B36-0F6B4FF55297}</ProjectGuid>
+    <ProjectGuid>{1D30F311-910A-49BC-9447-0D90C6B0CD5C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>StoreFront.Data.EF</RootNamespace>
@@ -50,6 +50,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AspNetRole.cs">
+      <DependentUpon>StoreFront.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUser.cs">
+      <DependentUpon>StoreFront.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUserClaim.cs">
+      <DependentUpon>StoreFront.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUserLogin.cs">
+      <DependentUpon>StoreFront.tt</DependentUpon>
+    </Compile>
     <Compile Include="Category.cs">
       <DependentUpon>StoreFront.tt</DependentUpon>
     </Compile>
@@ -76,35 +88,35 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>StoreFront.tt</DependentUpon>
     </Compile>
-    <Compile Include="StoreFront.Designer.cs">
+    <Compile Include="StoreFront.Data.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>StoreFront.edmx</DependentUpon>
+      <DependentUpon>StoreFront.Data.edmx</DependentUpon>
     </Compile>
-    <Compile Include="StoreFrontMetaData\StoreFrontMetaData.cs" />
+    <Compile Include="StoreFrontMetaData.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="StoreFront.edmx">
+    <EntityDeploy Include="StoreFront.Data.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>StoreFront.Designer.cs</LastGenOutput>
+      <LastGenOutput>StoreFront.Data.Designer.cs</LastGenOutput>
     </EntityDeploy>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
     <None Include="packages.config" />
-    <None Include="StoreFront.edmx.diagram">
-      <DependentUpon>StoreFront.edmx</DependentUpon>
+    <None Include="StoreFront.Data.edmx.diagram">
+      <DependentUpon>StoreFront.Data.edmx</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="StoreFront.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>StoreFront.Context.cs</LastGenOutput>
-      <DependentUpon>StoreFront.edmx</DependentUpon>
+      <DependentUpon>StoreFront.Data.edmx</DependentUpon>
     </Content>
     <Content Include="StoreFront.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>StoreFront.edmx</DependentUpon>
+      <DependentUpon>StoreFront.Data.edmx</DependentUpon>
       <LastGenOutput>StoreFront.cs</LastGenOutput>
     </Content>
   </ItemGroup>
