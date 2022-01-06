@@ -81,6 +81,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>StoreFront.edmx</DependentUpon>
     </Compile>
+    <Compile Include="StoreFrontMetaData\StoreFrontMetaData.cs" />
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="StoreFront.edmx">
